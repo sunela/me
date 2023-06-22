@@ -1,0 +1,71 @@
+Sunela Mechanical Design
+========================
+
+This repository contains the files for the mechanical design of prototypes for
+the Sunela project. We use SolveSpace for 2D and 3D models and XFig for 2D
+drawings.
+
+This work is licensed under CC-BY-4.0, see LICENSE.txt for more information.
+
+The Sunela project is currently working towards a proof-of-concept prototype.
+The designs here are therefore of limited use for anything beyond development
+within this project.
+
+
+Drawings and 3D models
+----------------------
+
+We currently have the following designs:
+
+- display.slvs
+  The reference 3D model of the P169H002 display module from Shenzhen P&O
+  Technology Co., Limited, with a reconstruction of some of the model
+  parameters.
+
+  Note that display.slvs does not contain the original mesh and can therefore
+  not be used as distributed. The original mesh be downloaded and converted by
+  following the instructions in the section "Reference model for the display
+  module"
+
+- display.fig
+  A 2D drawing summarizing the key parameters obtained from display.slvs, with
+  some corrections based on the data sheet.
+
+- frame.slvs
+  A 3D model of a basic enclosure to hold the display module, based on the
+  information in display.fig. The model was slightly adjusted based on
+  mechanical testing and to provide room for an additional FPC not shown in the
+  reference material.
+
+- pcb.slvs
+  A 2D model, based on information in display.fig and frame.slvs, for the PCB
+  and possible battery options.
+
+
+Reference model for the display module
+--------------------------------------
+
+We obtain the reference geometry from two sources, both available from Sipeed:
+
+1) the drawings in the data sheet (P169H002-CTP.pdf)
+2) CAD-generated mesh (1.69inch.step)
+
+To obtain these files, first download 169H002-CTP.rar from
+https://dl.sipeed.com/shareURL/MAIX/M1s/M1s_Dock/6_Chip_Manual/touch_screen
+
+Unpack the archive with
+unrar x P169H002-CTP.rar 
+
+The data sheet is in P169H002-CTP.pdf, with the mechanical drawings on page 9.
+
+The 3D mesh is in the archive 1.69inch 电容触摸屏资料.rar
+Extract it with
+unrar x 1.69inch*.rar 1.69inch.step
+
+We use SolveSpace, which can import STL but not STEP. To convert from STEP to
+STL, we can use FreeCAD:
+
+freecad 1.69inch.step
+Edit > Select All
+File > Export ...
+Save as P169H002.stl
