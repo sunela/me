@@ -42,6 +42,9 @@ We currently have the following designs:
   A 2D model, based on information in display.fig and frame.slvs, for the PCB
   and possible battery options.
 
+- stacking.fig
+  Vertical stacking (draft)
+
 
 Reference model for the display module
 --------------------------------------
