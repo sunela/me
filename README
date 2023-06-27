@@ -45,6 +45,9 @@ We currently have the following designs:
 - stacking.fig
   Vertical stacking (draft)
 
+- usb.fig
+  Constraints for the USB connector
+
 
 Reference model for the display module
 --------------------------------------
